@@ -16,7 +16,7 @@
       </div>
 
       <Card v-else>
-        <CardContent class="p-0">
+        <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
