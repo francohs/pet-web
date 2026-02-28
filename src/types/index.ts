@@ -36,3 +36,17 @@ export interface Reminder {
 export interface AuthResponse {
   access_token: string;
 }
+
+export interface CreateAppointmentPayload {
+  petId: string;
+  date: string;
+  reason: string;
+  notes: string;
+}
+
+export interface CreateReminderPayload {
+  petId: string;
+  type: string;
+  dueDate: string;
+  description: string;
+}
