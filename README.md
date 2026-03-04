@@ -1,42 +1,116 @@
-# .
+# PetCare Manager - Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern web application that allows pet owners to manage their pets' health, schedule veterinary appointments, and track vaccine and medication reminders in one place.
 
-## Recommended IDE Setup
+## Live Demo
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+🔗 [https://pet-web-olive.vercel.app](https://pet-web-olive.vercel.app)
 
-## Recommended Browser Setup
+## Tech Stack
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- **Framework:** Vue 3 with TypeScript
+- **State Management:** Pinia
+- **Server State:** TanStack Query
+- **Tables:** TanStack Table
+- **Styling:** TailwindCSS
+- **UI Components:** shadcn-vue
+- **HTTP Client:** Axios
+- **Build Tool:** Vite
+- **Deployment:** Vercel
+- **CI/CD:** GitHub Actions
 
-## Type Support for `.vue` Imports in TS
+## Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- JWT authentication with automatic token refresh
+- Dashboard with summary cards and recent activity
+- Pet management with species, breed, and birth date
+- Appointment scheduling with status tracking
+- Vaccine and medication reminders
+- Fully responsive UI
 
-## Customize configuration
+## Project Structure
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-pnpm install
+```
+src/
+├── api/              # Axios API modules
+│   ├── client.ts     # Axios instance with interceptors
+│   ├── auth.ts
+│   ├── pets.ts
+│   ├── appointments.ts
+│   └── reminders.ts
+├── components/       # Shared components
+│   └── AppLayout.vue # Navigation layout
+├── composables/      # Reusable composables
+├── stores/           # Pinia stores
+│   └── auth.ts       # Authentication store
+├── types/            # TypeScript interfaces
+│   └── index.ts
+└── views/            # Page components
+    ├── LoginView.vue
+    ├── RegisterView.vue
+    ├── DashboardView.vue
+    ├── PetsView.vue
+    ├── PetDetailView.vue
+    ├── AppointmentsView.vue
+    └── RemindersView.vue
 ```
 
-### Compile and Hot-Reload for Development
+## Getting Started
 
-```sh
-pnpm dev
+### Prerequisites
+
+- Node.js 20+
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/petcare-manager-frontend.git
+cd petcare-manager-frontend
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
 ```
 
-### Type-Check, Compile and Minify for Production
+### Environment Variables
 
-```sh
-pnpm build
+Create a `.env` file in the root folder:
+
 ```
+VITE_API_URL=http://localhost:3000
+```
+
+### Running the App
+
+```bash
+# Development
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Deployment
+
+The app is automatically deployed to Vercel on every push to the `main` branch via GitHub Actions.
+
+### Required GitHub Secrets
+
+```
+VERCEL_TOKEN
+VERCEL_ORG_ID
+VERCEL_PROJECT_ID
+```
+
+## About
+
+Built by Franco Hormazabal, a Full Stack Engineer with a strong background in Full Stack production systems. Currently expanding into React and AI integrations.
+
+[linkedin.com/in/franco-hormazabal](https://www.linkedin.com/in/franco-hormazabal)
